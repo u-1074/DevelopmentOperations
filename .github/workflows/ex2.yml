@@ -1,4 +1,5 @@
 
+
 name: Nom Prenom Mail
 
 on:
@@ -11,26 +12,28 @@ jobs:
   print name:
     runs-on: ubuntu-latest
     
-  steps:
-    -uses: actions/checkout@v4
+    steps:
+      -uses: actions/checkout@v4
     
-    -name: printing_name
-     run: |
-       echo ${{secrets.NAME}}
+      -name: printing_name
+       run: |
+         echo ${{secrets.NAME}}
      
   Print surname:
     runs-on: ubuntu-latest
     
-    -name: printing_surname
-     run: |
-       echo ${{secrets.SURNAME}}
+    steps:
+      -name: printing_surname
+       run: |
+         echo ${{secrets.SURNAME}}
        
   Printing email:
     runs-on: ubuntu-latest
     
-    -name: printing_email
-     run: |
-       echo ${{secrets.EMAIL}}
+    steps:
+      -name: printing_email
+       run: |
+         echo ${{secrets.EMAIL}}
 
 
   
