@@ -7,7 +7,7 @@ on:
 
 jobs:
   
-  Running python script:
+  running_python_script:
     runs-on: ubuntu-latest
     
     env:
