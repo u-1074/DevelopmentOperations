@@ -13,27 +13,27 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      -uses: actions/checkout@v4
+      - uses: actions/checkout@v4
     
-      -name: printing_name
-       run: |
-         echo ${{secrets.NAME}}
+      - name: printing_name
+        run: |
+          echo ${{secrets.NAME}}
      
   print_surname:
     runs-on: ubuntu-latest
     
     steps:
-      -name: printing_surname
-       run: |
-         echo ${{secrets.SURNAME}}
+      - name: printing_surname
+        run: |
+          echo ${{secrets.SURNAME}}
        
   print_email:
     runs-on: ubuntu-latest
     
     steps:
-      -name: printing_email
-       run: |
-         echo ${{secrets.EMAIL}}
+      - name: printing_email
+        run: |
+          echo ${{secrets.EMAIL}}
 
 
   
