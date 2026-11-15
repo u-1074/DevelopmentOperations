@@ -16,7 +16,7 @@ jobs:
   
   dev:
     if: ${{ github.ref_name == 'dev' }}
-    if: ${{ $int % 2 == 0 }}
+    if: ${{ ${{ env.int }} % 2 == 0 }}
     runs-on: ubuntu-latest
     
     steps:
