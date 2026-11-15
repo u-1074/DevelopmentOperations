@@ -1,0 +1,21 @@
+
+name: Python script
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  
+  Running python script:
+    runs-on: ubuntu-latest
+    
+    env:
+      var: Example test
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: executing script
+        run: python3 pipelining/script.py
+        
