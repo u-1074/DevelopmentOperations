@@ -3,7 +3,7 @@ name: Naming pipes
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "dev", "val", "prod"]
     
 jobs:
   name:
