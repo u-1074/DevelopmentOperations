@@ -1,0 +1,15 @@
+
+name: Naming pipes
+
+on:
+  push:
+    branches: ["main"]
+    
+jobs:
+  name:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: printing branch name
+        run: echo ${{ github.ref }}
