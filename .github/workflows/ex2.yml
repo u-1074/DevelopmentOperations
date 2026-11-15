@@ -16,7 +16,7 @@ on:
   workflow_dispatch:
   
 jobs:
-  print_name:
+  print name:
     runs-on: ubuntu-latest
     env:
      VAR: Example # example_of_a_variable_that_can_be_accessed_in_THIS_job_under_the_name_${{ env.VAR }}
