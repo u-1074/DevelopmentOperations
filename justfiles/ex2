@@ -1,4 +1,9 @@
 
+set dotenv-load
+
+user:='utilisateur'
+password:='mdp'
+
 default:
 	@just --list
 
@@ -36,3 +41,6 @@ add_table table_name table_content:
 dump DBname:
 	mysqldump DBname
 	
+
+test:
+	echo $VAR
