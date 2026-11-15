@@ -21,9 +21,10 @@ jobs:
     steps:
       - name: Dev div
         run: |
-          if [ $(( ${{ env.int }}%2 )) -eq 0 ];
+          if [ $(( ${{ env.int }}%2 )) -eq 0 ]
           then echo "int=$(( $int/2 ))" >> $GITHUB_ENV
           echo ${{ env.int }}
+          fi
     
   val:
     if: ${{ github.ref_name == 'val' }}
