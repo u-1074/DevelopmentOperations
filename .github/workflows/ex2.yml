@@ -1,4 +1,11 @@
 
+# Put space in "- uses" and align others accordingly
+# Likewise, put space when using variables : ${{ VAR }}
+# If VAR is stored in A use B
+# 		environment variables -> ${{ vars.VAR }}
+# 		environment secrets -> ${{ secrets.VAR }}
+# 		job env tag -> ${{ env.VAR }}
+
 
 name: NomPrenomMail
 
@@ -11,13 +18,15 @@ on:
 jobs:
   print_name:
     runs-on: ubuntu-latest
+    env:
+     VAR: "example of a variable that can be accessed in this job under the name ${{ env.VAR }}"
     
     steps:
       - uses: actions/checkout@v4
     
       - name: printing_name
         run: |
-          echo ${{secrets.NAME}}
+          echo ${{ secrets.NAME }}
      
   print_surname:
     runs-on: ubuntu-latest
@@ -27,7 +36,7 @@ jobs:
     
       - name: printing_surname
         run: |
-          echo ${{secrets.SURNAME}}
+          echo ${{ secrets.SURNAME }}
        
   print_email:
     runs-on: ubuntu-latest
@@ -37,7 +46,7 @@ jobs:
     
       - name: printing_email
         run: |
-          echo ${{secrets.EMAIL}}
+          echo ${{ secrets.EMAIL }}
 
 
   
