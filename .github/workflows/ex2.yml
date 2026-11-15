@@ -16,17 +16,17 @@ on:
   workflow_dispatch:
   
 jobs:
-  Print_name:
+  print_name:
     runs-on: ubuntu-latest
     env:
-     VAR: Example # example_of_a_variable_that_can_be_accessed_in_THIS_job_under_the_name_${{ env.VAR }}
+     VAR: ${{ secrets.NAME }} # example_of_a_variable_that_can_be_accessed_in_THIS_job_under_the_name_${{ env.VAR }}
          
     steps:
       - uses: actions/checkout@v4
     
       - name: printing_name
         run: |
-          echo ${{ vars.NAME }}
+          echo ${{ env.VAR }}
      
   print_surname:
     runs-on: ubuntu-latest
