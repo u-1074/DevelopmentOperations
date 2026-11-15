@@ -1,0 +1,31 @@
+
+default:
+	@just --list
+	
+launch_db:
+	docker run --name db -e POSTGRES_PASSWORD=password -p 8080:80
+
+
+migrate: launch_db
+
+
+
+upgrade: launch_db
+	docker exec db pg_up
+
+downgrade: launch_db
+
+
+
+upgrade_next: launch_db
+
+
+
+downgrade_previous: launch_db
+
+
+
+dump: launch_db
+	docker exec db pg_dump db > postgres_dump.sql
+
+

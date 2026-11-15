@@ -1,0 +1,38 @@
+
+default:
+	@just --list
+
+
+hi:
+	echo "Hello world"
+
+init:
+	git init
+
+status:
+	git status
+
+modify file:
+	vi {{file}}
+
+add +files:
+	git add {{files}}
+
+commit message:
+	git commit -m {{message}}
+
+
+clean:
+	-rm tmp.txt
+
+
+create_db DBname:
+	mysql -u {{user}} -p {{password}} --execute="DROP DATABASE IF EXISTS {{DBname}}; CREATE DATABASE {{DBname}};"
+
+
+add_table table_name table_content:
+	mysql -u {{user}} -p {{password}} --execute="CREATE TABLE {{table_name}} {{table_content}}"
+
+dump DBname:
+	mysqldump DBname
+	
