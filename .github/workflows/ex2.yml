@@ -36,7 +36,7 @@ jobs:
     
       - name: printing_surname
         run: |
-          echo ${{ var.SURNAME }}
+          echo ${{ vars.SURNAME }}
        
   print_email:
     runs-on: ubuntu-latest
@@ -46,7 +46,7 @@ jobs:
     
       - name: printing_email
         run: |
-          echo ${{ var.EMAIL }}
+          echo ${{ vars.EMAIL }}
 
 
   
