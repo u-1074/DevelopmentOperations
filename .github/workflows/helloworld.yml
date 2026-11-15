@@ -1,0 +1,19 @@
+
+
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  
+  workflow_dispatch:
+  
+jobs:
+  say_hi:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@4
+      
+      - name: Saying Hi
+        run: echo Hullo World
