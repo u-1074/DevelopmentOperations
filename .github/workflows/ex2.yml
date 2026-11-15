@@ -18,8 +18,8 @@ on:
 jobs:
   print_name:
     runs-on: ubuntu-latest
-    env:
-     VAR: example_of_a_variable_that_can_be_accessed_in_this_job_under_the_name_${{_env.VAR_}}
+    #~ env:
+     #~ VAR: example_of_a_variable_that_can_be_accessed_in_this_job_under_the_name_${{_env.VAR_}}
          
     steps:
       - uses: actions/checkout@v4
