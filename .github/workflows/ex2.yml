@@ -26,7 +26,7 @@ jobs:
     
       - name: printing_name
         run: |
-          echo "${{ vars.VAR }}"
+          echo "${{ vars.NAME }}"
      
   print_surname:
     runs-on: ubuntu-latest
@@ -36,7 +36,7 @@ jobs:
     
       - name: printing_surname
         run: |
-          echo ${{ secrets.env2.SURNAME }}
+          echo ${{ var.SURNAME }}
        
   print_email:
     runs-on: ubuntu-latest
@@ -46,7 +46,7 @@ jobs:
     
       - name: printing_email
         run: |
-          echo ${{ secrets.EMAIL }}
+          echo ${{ var.EMAIL }}
 
 
   
