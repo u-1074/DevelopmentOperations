@@ -16,37 +16,37 @@ jobs:
   
   dev:
     if: ${{ github.ref_name == 'dev' }}
-    if: ${{ $int % 2 == 0 }}
+    #~ if: ${{ $int % 2 == 0 }}
     runs-on: ubuntu-latest
     
     steps:
       - name: Dev div
         run: |
-          echo "int=$(( $int/2 ))" >> GITHUB_ENV;
+          echo "int=$(( $int/2 ))" >> $GITHUB_ENV
           echo ${{ env.int }}
     
   val:
     if: ${{ github.ref_name == 'val' }}
-    if: ${{ ${{ env.int }}%2 == 0 }}
+    #~ if: ${{ ${{ env.int }}%2 == 0 }}
     needs: dev
     runs-on: ubuntu-latest
     
     steps:
       - name: Val div
         run: |
-          echo "int=$(( ${{ env.int }}/4 ))" >> GITHUB_ENV
+          echo "int=$(( ${{ env.int }}/4 ))" >> $GITHUB_ENV
           echo ${{ env.int }}
         
   prod:
     if: ${{ github.ref_name == 'prod' }}
-    if: ${{ ${{ env.int }}%2 == 0 }}
+    #~ if: ${{ ${{ env.int }}%2 == 0 }}
     runs-on: ubuntu-latest
     needs: [dev, val]
     
     steps:
       - name: Prod div
         run: |
-          echo "int=$(( ${{ env.int }}/8 ))" >> GITHUB_ENV
+          echo "int=$(( ${{ env.int }}/8 ))" >> $GITHUB_ENV
           echo ${{ env.int }}
 
 
