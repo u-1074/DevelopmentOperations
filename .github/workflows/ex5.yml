@@ -48,6 +48,3 @@ jobs:
           if [ $((${{ env.int }}%2)) -eq 0 ];
           then echo "int=$(( $int/8 ))" >> $GITHUB_ENV
           echo ${{ env.int }}
-
-
-
