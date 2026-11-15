@@ -19,7 +19,7 @@ jobs:
   print_name:
     runs-on: ubuntu-latest
     env:
-     VAR: ${{ secrets.NAME }} # example_of_a_variable_that_can_be_accessed_in_THIS_job_under_the_name_${{ env.VAR }}
+     VAR: ${{ vars.NAME }} # example_of_a_variable_that_can_be_accessed_in_THIS_job_under_the_name_${{ env.VAR }}
          
     steps:
       - uses: actions/checkout@v4
@@ -27,6 +27,7 @@ jobs:
       - name: printing_name
         run: |
           echo ${{ env.VAR }}
+          echo ${{ vars.VAR }}
      
   print_surname:
     runs-on: ubuntu-latest
