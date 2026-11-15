@@ -17,5 +17,8 @@ jobs:
       - uses: actions/checkout@v4
       
       - name: executing script
-        run: python3 pipelining/script.py
+        run: python3 pipelining/script.py  # default working directory is root of repository
+        
+      - name: print env variable
+        run: echo ${{ env.var }}
         

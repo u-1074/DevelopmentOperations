@@ -36,7 +36,7 @@ jobs:
     
       - name: printing_surname
         run: |
-          echo ${{ secrets.SURNAME }}
+          echo ${{ secrets.env2.SURNAME }}
        
   print_email:
     runs-on: ubuntu-latest
