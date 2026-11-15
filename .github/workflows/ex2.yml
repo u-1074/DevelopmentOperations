@@ -1,6 +1,6 @@
 
 
-name: Nom Prenom Mail
+name: NomPrenomMail
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
   
 jobs:
-  print name:
+  print_name:
     runs-on: ubuntu-latest
     
     steps:
@@ -19,7 +19,7 @@ jobs:
        run: |
          echo ${{secrets.NAME}}
      
-  Print surname:
+  print_surname:
     runs-on: ubuntu-latest
     
     steps:
@@ -27,7 +27,7 @@ jobs:
        run: |
          echo ${{secrets.SURNAME}}
        
-  Printing email:
+  print_email:
     runs-on: ubuntu-latest
     
     steps:
