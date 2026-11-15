@@ -37,7 +37,7 @@ jobs:
       - name: printing_surname
         run: |
           echo ${{ vars.SURNAME }}
-       
+  
   print_email:
     runs-on: ubuntu-latest
     
