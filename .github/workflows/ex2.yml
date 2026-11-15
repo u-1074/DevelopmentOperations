@@ -27,7 +27,7 @@ jobs:
       - name: printing_name
         run: |
           echo ${{ env.VAR }}
-          echo ${{ vars.VAR }}
+          echo "${{ vars.VAR }}"
      
   print_surname:
     runs-on: ubuntu-latest
