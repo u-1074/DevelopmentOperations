@@ -14,5 +14,5 @@ jobs:
       - name: printing branch name
         run: |
           echo ${{ github.ref }}
-          echo ${{ GITHUB_REF_NAME }}
+          echo ${{ GITHUB_REF }}
      
