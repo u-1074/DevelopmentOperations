@@ -28,7 +28,7 @@ jobs:
         run: npx linthtml index.html
 
   deploy:
-    #~ needs: lint
+    needs: lint
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
