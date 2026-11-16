@@ -24,8 +24,8 @@ jobs:
       - name: Installing lint
         run: npm install @linthtml/linthtml --save-dev
       
-      #~ - name: Running lint
-        #~ run: npx linthtml index.html
+      - name: Running lint
+        run: npx linthtml index.html
 
   deploy:
     #~ needs: lint
