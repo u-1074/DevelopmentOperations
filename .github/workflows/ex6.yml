@@ -21,8 +21,8 @@ jobs:
         with:
           node-version: 22
      
-      - name: Installing lint
-        run: npm install @linthtml/linthtml --save-dev
+      #~ - name: Installing lint
+        #~ run: npm install @linthtml/linthtml --save-dev
       
       #~ - name: Running lint
         #~ run: npx linthtml index.html
