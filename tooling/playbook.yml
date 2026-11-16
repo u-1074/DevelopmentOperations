@@ -1,26 +1,20 @@
-- hosts: webservers
-  become: yes
+# ansible/playbook.yml
+- name: Déployer Nginx avec Hello World
+  hosts: web
+  become: true            # exécute en root (sudo)
   tasks:
-    - name: Installing nginx
+    - name: Installer Nginx
       apt:
         name: nginx
         state: present
-        update_cache: yes
-    
-    - name: Moving file to right folder
+
+    - name: Copier la page Hello World
       copy:
         src: ../index.html
         dest: /var/www/html/index.html
 
-    - name: Activate nginx  
+    - name: Démarrer Nginx
       service:
         name: nginx
         state: started
-        enabled: yes
-
-
-  handlers:
-    - name: Redemarrer Nginx
-      ansible.builtin.service:
-        name: nginx
-        state: restarted
+        enabled: true
