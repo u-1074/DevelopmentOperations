@@ -25,7 +25,7 @@ jobs:
         run: npm install @linthtml/linthtml --save-dev
       
       - name: Running lint
-        run: npx linhtml index.html
+        run: npx linthtml index.html
 
   deploy: lint
     environment:
