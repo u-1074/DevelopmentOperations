@@ -1,0 +1,26 @@
+- hosts: webservers
+  become: yes
+  tasks:
+    - name: Installing nginx
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+    
+    - name: Moving file to right folder
+      copy:
+        src: ../index.html
+        dest: /var/www/html/index.html
+
+    - name: Activate nginx  
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
+
+  handlers:
+    - name: Redemarrer Nginx
+      ansible.builtin.service:
+        name: nginx
+        state: restarted
