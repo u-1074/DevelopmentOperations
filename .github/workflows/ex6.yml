@@ -10,7 +10,24 @@ on:
 
 jobs:
 
-  deploy:
+  lint:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Installing node.js
+        run: action/setpu-node@v4
+        with:
+          node-version: 22
+     
+      - name: Installing lint
+        run: npm install @linthtml/linthtml --save-dev
+      
+      - name: Running lint
+        run: npx linhtml index.html
+
+  deploy: lint
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
