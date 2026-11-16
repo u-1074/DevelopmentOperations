@@ -16,18 +16,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      #~ - name: Installing node.js
-        #~ run: actions/setup-node@v4
-        #~ with:
-          #~ node-version: 22
+      - name: Installing node.js
+        run: actions/setup-node@v4
+        with:
+          node-version: 22
      
-      #~ - name: Installing lint
-        #~ run: npm install @linthtml/linthtml --save-dev
+      - name: Installing lint
+        run: npm install @linthtml/linthtml --save-dev
       
-      #~ - name: Running lint
-        #~ run: npx linthtml index.html
+      - name: Running lint
+        run: npx linthtml index.html
 
-  deploy: lint
+  deploy:
+    needs: lint
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
